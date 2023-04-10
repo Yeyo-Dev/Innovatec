@@ -1,0 +1,100 @@
+/* Colores */
+:root {
+
+	--secondary-color: #79d984;
+
+}
+
+/* Estilos del header */
+header {
+	background-image: linear-gradient(to bottom, #408534, #79d984);
+	color: #ffffff;
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+}
+main{
+	background-image: linear-gradient(to bottom, #0f7682, #a8dbe0);
+
+	color: #fec700;    
+}
+.chart-wrapper {
+    margin: 0 auto;
+    width: 100%;
+    height: auto;
+    padding: 0.8%;
+    
+}
+#gauge-corriente, #gauge-potencia{
+    display:inline-block;
+    position:relative;
+    height: 10vw;
+}
+
+nav {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	padding: 20px;
+}
+
+.menu li {
+	display: inline-block;
+	margin-right: 20px;
+}
+
+.menu li:last-child {
+	margin-right: 0;
+}
+
+.menu a {
+	color: #ffffff;
+	text-decoration: none;
+	padding: 10px;
+	transition: all 0.2s ease;
+    border: black;
+}
+
+.menu a:hover {
+	background-color: var(--secondary-color);
+}
+
+.dropdown-menu {
+	display: none;
+	position: absolute;
+	top: 27px;
+	/*background-color: var(--secondary-color);*/
+	padding: 17px;
+    margin: 0;
+	border-radius: 4px;
+	box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+}
+
+.dropdown:hover .dropdown-menu {
+	display: block;
+    background-color: var(--secondary-color);
+}
+
+.user {
+	display: flex;
+	align-items: center;
+}
+.user img {
+    width: 40px; /* ajusta el tamaño según tu preferencia */
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+.username {
+	margin-right: 10px;
+}
+
+/* Estilos generales */
+body {
+	color: var(--text-color);
+	font-family: sans-serif;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
