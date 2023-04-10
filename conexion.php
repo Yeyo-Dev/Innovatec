@@ -1,9 +1,13 @@
 <?php
+
+$config = file_get_contents('config.json');
+$config = json_decode($config, true);
+
 //variables para la conexion a bd
-$usuario="acapul19";
-$contraseña="8@534AqjQvR+Vs";
-$servidor="198.59.144.15";
-$basededatos="acapul19_medidor_luz";//nombre de la base da datos
+$usuario = $config['db']['username'];
+$contraseña = $config['db']['password'];
+$servidor = $config['db']['host'];
+$basededatos = $config['db']['dbname'];//nombre de la base da datos
 
 $mysqli = new mysqli($servidor, $usuario, $contraseña,$basededatos);
 
