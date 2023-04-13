@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -46,8 +46,8 @@
                     <td><canvas id="gauge-potencia"></canvas></td>
                 </tr>
                 <tr>
-                    <td class="text-center" style="color: #fff;">Corriente</td>
-                    <td class="text-center" style="color: #fff;">Potencia</td>
+                    <td class="text-center" id="corriente-text"style="color: #fff;">Corriente</td>
+                    <td class="text-center" id="potencia-text"style="color: #fff;">Potencia</td>
                 </tr>
             </table>
         </div>
@@ -66,9 +66,10 @@
             </thead>  
         </table>
     </div>
-        <button onclick="traerDatos()"   class="btn btn-outline-dark">Refrescar</button>
+        
     </main>
     <script src="./js/getData.js"></script>
     <script src="./js/gauge.js"></script>
+    <script src="./js/cliente.js"></script>
 </body>
 </html>

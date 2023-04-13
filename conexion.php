@@ -42,4 +42,5 @@ function obtener_datos($mysqli){
     }
 }
 
+//exec("php websockets.php &");
 ?>

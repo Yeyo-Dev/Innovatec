@@ -21,3 +21,4 @@ function traerDatos(){
             .catch(error => console.error(error));
 }
 traerDatos();
+traerDatos();
