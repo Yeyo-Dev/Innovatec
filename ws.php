@@ -8,7 +8,7 @@ use Ratchet\Http\HttpServer;
 use Ratchet\Server\IoServer;
 use Ratchet\Wamp\WampServerInterface;
 
-class MyWebSocket implements MessageComponentInterface, WampServerInterface{
+class MyWebSocket implements MessageComponentInterface{
     protected $clients;
     //private $mysqli;
 
@@ -22,25 +22,28 @@ class MyWebSocket implements MessageComponentInterface, WampServerInterface{
         $this->clients->attach($conn);
         echo "Nuevo cliente conectado ({$conn->resourceId})\n";
     }
-    public function onSubscribe(ConnectionInterface $conn, $topic) {
-        // Implementación de la suscripción a un topic
-    }
-
-    public function onUnSubscribe(ConnectionInterface $conn, $topic) {
-        // Implementación de la desuscripción de un topic
-    }
-
-    public function onCall(ConnectionInterface $conn, $id, $topic, $params) {
-        // Implementación de la oncall
-    }
-
-    public function onPublish(ConnectionInterface $conn, $topic, $event, $exclude, $eligible){
-        // Implementación de la desuscripción de un topic
-    }
 
     public function onClose(ConnectionInterface $conn){
+    
         $this->clients->detach($conn);
-        echo "Cliente desconectado\n";
+        echo "Cliente desconectado ({$conn->resourceId})\n";
+        if (count($this->clients) == 0) {
+            // Detener el servidor si no hay clientes conectados
+            echo "Deteniendo el servidor...\n";
+            $server = $conn->httpRequest->getAttribute('server');
+            $server->loop->stop();
+            // Leer el archivo JSON
+            $fileContents = file_get_contents('config.json');
+            // Convertir el JSON en un array PHP
+            $config = json_decode($fileContents, true);
+            // Modificar el valor deseado
+            $config['socket-server']['run'] = false;
+            // Convertir el array PHP de vuelta a JSON
+            $json = json_encode($config);
+            // Escribir el JSON actualizado en el archivo
+            file_put_contents('config.json', $json);
+
+        }
     }
 
     public function onError(ConnectionInterface $conn, \Exception $e){

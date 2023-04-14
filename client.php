@@ -1,4 +1,5 @@
 <?php
+require "./websockets.php";
 require __DIR__ . '/vendor/autoload.php';
 use WebSocket\Client;
 use WebSocket\Connection;
