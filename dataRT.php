@@ -2,7 +2,8 @@
 // Conexión a la base de datos
 include("./conexion.php");
 // Consulta a la base de datos
-$sql = "SELECT * FROM datoscircuito WHERE fecha = (SELECT MAX(fecha) FROM datoscircuito)";
+//$sql = "SELECT * FROM datoscircuito WHERE fecha = (SELECT MAX(fecha) FROM datoscircuito)";
+$sql = "SELECT * FROM lecturas WHERE fecha = (SELECT MAX(fecha) FROM lecturas)";
 $res = $mysqli->query($sql);
 $tot_registros = mysqli_num_rows($res);
 // Crear array con los datos
