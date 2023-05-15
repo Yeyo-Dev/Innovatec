@@ -1,0 +1,131 @@
+body{
+    height: 100vh;
+    font-family: 'Inter';
+    background-image: url(/img/fondo.jpg);
+    background-repeat: no-repeat;
+}
+
+.login-container{
+    background-image: url(/img/fondo2.jpg);
+    height: 43.75em;
+    width: 65em;
+    margin: 6em auto;
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.login-info-container{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    /*border: 2px solid red;*/
+    padding-top: 0.5rem;
+}
+
+.image{
+    width: 50%;
+    padding: 2rem;
+}
+
+.titulo{
+    text-transform: capitalize;
+    font-size: 2.25rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.logo-user-container{
+    width: 80%;
+    justify-content: space-evenly;
+}
+
+.user-element img{
+    width: 10rem;
+    height: 10rem;
+}
+.logo-element{
+    width: 40%;
+}
+.logo-element img{
+    width: 5rem;
+    height: 5rem;
+}
+
+.inputs-container{
+    height: 55%;
+    width: 85%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.input, .btn{
+    width: 90%;
+    height: 3.125rem;
+    font-size: 1em;
+}
+.input{
+    padding-left: 20px;
+    border-radius: 50px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    box-sizing: border-box;
+}
+
+.input:hover{
+    border: 2px solid #368681;
+}
+.btn{
+    width: 75%;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: black;
+    border-radius: 5px ;
+    background-color: #368681;
+    border-color: 1px solid #296754;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.inputs-container p{
+    margin: 0;
+}
+.span{
+    color: #92E3A9;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+
+/*Diseño responsive*/
+@media screen and (max-width:1000px ){
+    .image{
+        display: none;
+    }
+    .login-container{
+        width: 70%;
+        margin-top: 3rem;
+    }
+    .login-info-container{
+        width: 100%;
+    }
+}
+
+@media screen and(max-width: 650px){
+    .login-container{
+        width: 90%;
+    }
+}
+
+@media screen and(max-width: 500px){
+    .logo-user-container{
+        flex-direction: column;
+        align-items: center;
+        height: 30%;
+    }
+}
+
