@@ -1,12 +1,12 @@
 body{
     height: 100vh;
     font-family: 'Inter';
-    background-image: url(/img/fondo.jpg);
+    background-image: url(../img/fondo.jpg);
     background-repeat: no-repeat;
 }
 
 .login-container{
-    background-image: url(/img/fondo2.jpg);
+    background-image: url(../img/fondo2.jpg);
     height: 43.75em;
     width: 65em;
     margin: 6em auto;

@@ -4,8 +4,25 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="estilos/style.css">
+    <link rel="stylesheet" href="styles/Loginstyle.css">
     <title>Login-ASGAIA</title>
+    <script>
+        fetch("./login.php")
+        .then((res)=>{
+            return res.text();
+        })
+        .then((res1)=>{
+        console.log(res1)
+        if (res1 == 'true') {
+            window.location.href = "./sensores.html";       
+        }else if(res1 == 'error'){
+            console.log("error");
+        }
+    })
+    .catch((err)=>{ 
+        console.log(err);
+    });
+    </script>
 </head>
 <body>
     <div class="login-container"><!--Contenedor principal-->
@@ -19,15 +36,16 @@
                     <img src="img/usuario.png" alt="usuario">
                 </div>
             </div>
-            <form class="inputs-container"><!--Formulario para botones de login-->
-                <input class="input" type="text" placeholder="Correo">
-                <input class="input" type="password" placeholder="Contraseña">
+            <form id="FRMLogin"  class="inputs-container"><!--Formulario para botones de login-->
+                <input  id="password" class="input" type="text" placeholder="Usuario">
+                <input id="user" class="input" type="password" placeholder="Contraseña">
                 <p>¿Olvidó su Contraseña? <span class="span">Click aqui</span></p>
-                <button class="btn">Ingresar</button>
+                <input type="submit" class="btn">Ingresar</input>
                 <p>No tienes cuenta? <span class="span">Registrate</span></p>
             </form>
         </div>
         <img class="image" src="img/Login-rafiki.png" alt="icono"><!--img de icono-->
     </div>
+    <script src="./js/login.js"></script>
 </body>
 </html>
