@@ -17,7 +17,7 @@ form.addEventListener('submit',function(e) {//click en submit
             Swal.fire(res);
 
         }else{
-            window.location.href = "./Home.html";
+            window.location.href = "./Home.php";
         }
     })
 });

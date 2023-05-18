@@ -27,6 +27,8 @@ try{
 }catch(e){
     console.error(e);
     setTimeout(() =>{
-        location.reload();
-      }, 1000);
+        //location.reload();
+        traerDatos();
+        gaugeRT();  
+        }, 900);
 }

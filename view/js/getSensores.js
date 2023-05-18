@@ -9,9 +9,9 @@ function getSensores() {
         let id = sensor.id_sensor;
         console.log(id);
         document.getElementById('botones').insertAdjacentHTML('beforeend',
-        `<div class="btn">${id}
+        `<a href="./lecturas.php?id=${id}"><div class="btn">${id}
         <a href="#"><img src="img/sensor-icon.png" alt=""></a>
-        </div>`
+        </div></a>`
         )
     })
     })

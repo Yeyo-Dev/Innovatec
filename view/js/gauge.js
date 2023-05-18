@@ -1,16 +1,27 @@
 function gaugeRT(){
-  fetch('../dataRT.php')
-          .then(response => response.json())
+    let id = document.getElementById('idsensor').textContent;
+    let data = new FormData();
+    data.append('idsensor',id)
+    fetch('../dataRT.php',{
+      method: 'POST',
+        body: data
+    })
+          .then(response => {
+            console.log(response);
+            return response.json()
+          })
           .then(data => {
+            console.log(data);
             data = data[0];
-            let corriente = parseFloat(data.Corriente);
-            let potencia = parseFloat(data.Potencia);
+            console.log(data);
+            let corriente = parseFloat(data.corriente);
+            let potencia = parseFloat(data.potencia);
            
             updateGauge(corriente, potencia);
             document.getElementById("corriente-text").innerHTML =  `Corriente: ${corriente} V`;
             document.getElementById("potencia-text").innerHTML =  `Potencia: ${potencia} Watts`;
           })
-          .catch(error => console.error(error));
+          .catch(err => console.log(err));
 }
 const updateGauge = (corriente, potencia) =>{
   var opts = {

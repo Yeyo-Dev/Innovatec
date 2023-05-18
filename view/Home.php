@@ -1,3 +1,4 @@
+<?php session_start();?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,6 +8,8 @@
     <script src="https://kit.fontawesome.com/8be45e5784.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="styles/sensoreSy.css">
     <title>Home</title>
+    <script src="./js/sesion.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
     <!--
@@ -26,7 +29,7 @@
         </a>
         <ul>
             <li><a class="links" href="#">Conoce más</a></li>
-            <li><a class="links" href="#">Cerrar sesion</a></li>
+            <li><a class="links" onclick="exitSystem()">Cerrar sesion</a></li>
             <li><a class="perfilHome" href="#"><img src="img/perfilHome.png" alt=""></a></li>
         </ul>
     </nav>
@@ -35,10 +38,10 @@
         <div class="container-elements">
             <img class="imagen-sensor" src="img/img-home.png" alt="imagen">
             <div class="container-sensores">
-                <h1 class="welcome">Bienvenido <br>Name user</h1>
+                <h1 class="welcome">Bienvenido <br><?php echo $_SESSION['nickname']; ?></h1>
                 <p>Mis sensores:</p>
                 <div class="container-botones" id="botones">
-                    <div class="btn">Nuevo sensor
+                    <div class="btn" onclick="add()">Nuevo sensor
                         <a href="#"><img src="img/more-sensor.png" alt=""></a>
                     </div>
                 </div>
@@ -46,5 +49,8 @@
         </div>
     </main>
     <script src="./js/getSensores.js"></script>
+    <script src="./js/addSensor.js"></script>
+    <script src="./js/cerrarSesion.js"></script>
+    <script></script>
     </body>
     </html>
