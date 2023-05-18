@@ -13,7 +13,7 @@ function encriptarPassword($password) {
 
       // Insertar los datos en la tabla usuario
       $sql = "INSERT INTO usuario (nickname, password) VALUES ('$nickname', '$passwordEncriptada')";
-      if ($conn->query($sql) === TRUE) {
+      if ($mysqli->query($sql) === TRUE) {
           echo "Registro exitoso.";
       } else {
           echo "Error en el registro";

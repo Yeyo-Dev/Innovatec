@@ -18,10 +18,10 @@ if (mysqli_connect_errno()) {
 
 function guardar_datos( $mysqli, $id, $co, $pot){
     if (!($mysqli->query("SELECT id_sensor FROM sensor WHERE id_sensor='$id'"))){
-        $mysqli->query("INSERT INTO sensor (id_sensor) VALUES ('$id')");
+        $res = $mysqli->query("INSERT INTO sensor (id_sensor) VALUES ('$id')");
         }
 
-    $query = "INSERT INTO lecturas (corriente,potencia,id_sensor) VALUES (".$co.",".$pot.",".$id.");";
+    $query = "INSERT INTO lecturas ( corriente, potencia, id_sensor) VALUES ('$co','$pot','$id');";
     return $mysqli->query($query);
 }
 

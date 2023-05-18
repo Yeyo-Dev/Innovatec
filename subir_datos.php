@@ -7,9 +7,9 @@ include("./conexion.php");
 // Accede a los valores del JSON
 //$Corriente=	$data->corriente;
 //$Potencia =$data->potencia;
-$idsensor = $_POST['idsensor'];
-$Corriente=	$_POST['corriente'];
-$Potencia =$_POST['potencia'];
+$idsensor = $_GET['idsensor'];
+$Corriente=	$_GET['corriente'];
+$Potencia =$_GET['potencia'];
 
 //imprime los datos en el servidor
 echo "La corriente es: ".$Corriente."<br>La potencia es: ".$Potencia;

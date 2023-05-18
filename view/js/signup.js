@@ -4,7 +4,7 @@ form.addEventListener('submit',function(e) {//click en submit
     e.preventDefault();//para evitar que se racargue la pagina
     
     let data = new FormData(form);//se guarda la informacion del form
-    fetch("../login.php",{//conectar con el php, se escribe por que metodo se envian los datos
+    fetch("../signup.php",{//conectar con el php, se escribe por que metodo se envian los datos
         method:"POST",
         body: data
     })
@@ -13,11 +13,10 @@ form.addEventListener('submit',function(e) {//click en submit
     })
     .then((res) =>{
         console.log(res);
+        Swal.fire(res);
         if(res=='Contraseña incorrecta.' || res=='Usuario no encontrado'){
             Swal.fire(res);
 
-        }else{
-            window.location.href = "./Home.html";
         }
     })
 });
